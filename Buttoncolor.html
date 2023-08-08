@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Color Change After Click
+    </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=FAMILY_NAME:wght@WEIGHT_OR_RANGE&display=swap');
+        *{
+            font-family: 'Poppins',sans-serif;
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(33, 31, 31);
+        }
+        button{
+            width: 200px;
+            height: 60px;
+            padding:10px 0;
+            border-radius: 8px;
+            outline: none;
+            font-size: 24px;
+            color:white;
+            background-color:#ff00a2;
+            border: 2px solid white;
+            box-shadow: 0 0 10px #ff00a2;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <button type="submit" id="btn" onclick="changeColor()">click here</button>
+    <script>
+        function changeColor(){
+            const button = document.getElementById('btn');
+            button.style.backgroundColor = "#ff1c1c";
+            button.style.boxShadow = "0 0 10px #ff1c1c";
+        }
+    </script>
+</body>
+</html>
