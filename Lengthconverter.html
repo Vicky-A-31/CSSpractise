@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length Converter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+        *{
+            padding:0px;
+            margin:0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body > h2{
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 30px;
+            color: rgb(28, 28, 86);
+            text-shadow: 3px 3px 5px rgb(75, 182, 236);
+            margin-top: 20px;
+        }
+        .box{
+            display: flex;
+            flex-direction: column;
+            min-height: 80vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            background-color: rgb(223, 223, 96);
+            min-width: 350px;
+            min-height: 420px;
+            border-radius: 10px;
+            padding:20px 40px;
+            box-shadow: 0 0 20px black;
+        }
+        .container > h2{
+            text-transform: lowercase;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .section{
+            margin:25px 0px;
+            display: flex;
+            width: 100%;
+        }
+        .section label{
+            flex: 50%;
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .section select{
+            flex: 50%;
+            font-size: 16px;
+            min-width: 140px;
+            min-height: 30px;
+            border-radius: 5px;
+        }
+
+        .container > input{
+            display: block;
+            width: 100%;
+            min-height: 40px;
+            border-radius: 10px;
+            border:1px solid; 
+            padding:0 10px;
+            font-size: 20px;
+            box-shadow: 0 0 5px black;
+        }
+        .container > button{
+            width: 100%;
+            min-height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border-radius: 20px;
+            border:1px solid black;
+            cursor: pointer;
+            margin-top: 10px 0 20px 0;
+            background-color: tomato;
+        }
+        .container > button:hover{
+            background-color: rgb(28, 28, 86);
+            color:wheat;
+        }
+        .container > #result{
+            font-size: 24px;
+            text-align: center;
+            margin:30px 0;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h2>vicky's length converter</h2>
+    <div class="box">
+        <div class="container">
+            <h2>converter</h2>
+            <div class="section">
+                <label for="fromlist">From</label>
+                <select id="fromlist">
+                    <option value="select">---select---</option>
+                    <option value="cm">centimeters</option>
+                    <option value="m">meters</option>
+                    <option value="inch">inches</option>
+                    <option value="km">kilometers</option>
+                    <option value="feet">feet</option>
+                    <option value="yard">yards</option>
+                </select>    
+            </div>
+    
+            <input type="text" id="input" placeholder="enter the value">
+    
+            <div class="section">
+                <label for="tolist">To</label>
+                <select id="tolist">
+                    <option value="select">---select---</option>
+                    <option value="cm">centimeters</option>
+                    <option value="m">meters</option>
+                    <option value="inch">inches</option>
+                    <option value="km">kilometers</option>
+                    <option value="feet">feet</option>
+                    <option value="yard">yards</option>
+                </select>
+            </div>
+    
+            <button type="submit" onclick="convert();">convert</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    <script text="javascript/text">
+        function convert(){
+            
+            const from = document.getElementById('fromlist').value;
+            
+            const input = Number(document.getElementById('input').value);
+
+            const to = document.getElementById('tolist').value;
+
+            const result = document.getElementById('result');
+
+            switch(from){
+                case 'cm':{
+                    if(to == 'cm'){
+                        result.innerHTML=input+" cm";
+                    }
+                    else if(to == 'm'){
+                        result.innerHTML=(input/100).toPrecision(5)+" m";
+                    }
+                    else if(to == 'inch'){
+                        result.innerHTML=(input/2.54).toPrecision(5)+" inches";
+                    }
+                    else if(to == 'km'){
+                        result.innerHTML=(input/100000).toPrecision(5)+" km";
+                    }
+                    else if(to == 'feet'){
+                        result.innerHTML=(input/30.48).toPrecision(5)+" feets"
+                    }
+                    else if(to == 'yard'){
+                        result.innerHTML=(input/91.44).toPrecision(5)+" yards"
+                    }
+                    else{
+                        result.innerHTML="something wrong !"    
+                    }
+                    break;
+                }
+                case 'm':{
+                    if(to == 'm'){
+                        result.innerHTML=input+" m";
+                    }
+                    else if(to == 'cm'){
+                        result.innerHTML=(input*100).toPrecision(5)+" cm";
+                    }
+                    else if(to == 'inch'){
+                        result.innerHTML=(input*39.37).toPrecision(5)+" inches";
+                    }
+                    else if(to == 'km'){
+                        result.innerHTML=(input/1000).toPrecision(5)+" km";
+                    }
+                    else if(to == 'feet'){
+                        result.innerHTML=(input*3.281).toPrecision(5)+" feets"
+                    }
+                    else if(to == 'yard'){
+                        result.innerHTML=(input*1.094).toPrecision(5)+" yards"
+                    }
+                    else{
+                        result.innerHTML="something wrong !"    
+                    }
+                    break;
+                }
+                case 'inch':{
+                    if(to == 'inch'){
+                        result.innerHTML=input+" inches";
+                    }
+                    else if(to == 'm'){
+                        result.innerHTML=(input/39.37).toPrecision(5)+" m";
+                    }
+                    else if(to == 'cm'){
+                        result.innerHTML=(input/2.54).toPrecision(5)+" cm";
+                    }
+                    else if(to == 'km'){
+                        result.innerHTML=(input/39370).toPrecision(5)+" km";
+                    }
+                    else if(to == 'feet'){
+                        result.innerHTML=(input/12).toPrecision(5)+" feets"
+                    }
+                    else if(to == 'yard'){
+                        result.innerHTML=(input/36).toPrecision(5)+" yards"
+                    }
+                    else{
+                        result.innerHTML="something wrong !"    
+                    }
+                    break;
+                }
+                case 'km':{
+                    if(to == 'km'){
+                        result.innerHTML=input+" km";
+                    }
+                    else if(to == 'm'){
+                        result.innerHTML=(input*1000).toPrecision(5)+" m";
+                    }
+                    else if(to == 'inch'){
+                        result.innerHTML=(input*39370).toPrecision(5)+" inches";
+                    }
+                    else if(to == 'cm'){
+                        result.innerHTML=(input*100000).toPrecision(5)+" cm";
+                    }
+                    else if(to == 'feet'){
+                        result.innerHTML=(input*3281).toPrecision(5)+" feets"
+                    }
+                    else if(to == 'yard'){
+                        result.innerHTML=(input*1094).toPrecision(5)+" yards"
+                    }
+                    else{
+                        result.innerHTML="something wrong !"    
+                    }
+                    break;
+                }
+                case 'feet':{
+                    if(to == 'feet'){
+                        result.innerHTML=input+" feets";
+                    }
+                    else if(to == 'm'){
+                        result.innerHTML=(input/3.281).toPrecision(5)+" m";
+                    }
+                    else if(to == 'inch'){
+                        result.innerHTML=(input*12).toPrecision(5)+" inches";
+                    }
+                    else if(to == 'km'){
+                        result.innerHTML=(input/3281).toPrecision(5)+" km";
+                    }
+                    else if(to == 'cm'){
+                        result.innerHTML=(input*30.48).toPrecision(5)+" cm"
+                    }
+                    else if(to == 'yard'){
+                        result.innerHTML=(input/3).toPrecision(5)+" yards"
+                    }
+                    else{
+                        result.innerHTML="something wrong !"    
+                    }
+                    break;
+                }
+                case 'yard':{
+                    if(to == 'yard'){
+                        result.innerHTML=input+" yards";
+                    }
+                    else if(to == 'm'){
+                        result.innerHTML=(input/1.094).toPrecision(5)+" m";
+                    }
+                    else if(to == 'inch'){
+                        result.innerHTML=(input*36).toPrecision(5)+" inches";
+                    }
+                    else if(to == 'km'){
+                        result.innerHTML=(input/1094).toPrecision(5)+" km";
+                    }
+                    else if(to == 'feet'){
+                        result.innerHTML=(input*3).toPrecision(5)+" feets"
+                    }
+                    else if(to == 'cm'){
+                        result.innerHTML=(input*91.44).toPrecision(5)+" cm"
+                    }
+                    else{
+                        result.innerHTML="something wrong !"    
+                    }
+                    break;
+                }
+                default:{
+                    result.innerHTML="something wrong !"        
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>
