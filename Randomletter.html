@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Letter From String</title>
+</head>
+<body>
+    <h3 id="string"></h3>
+    <p id="letter" style="font-size: 20px;"></p>
+    <script>
+        let name = "vignesh";
+        document.getElementById('string').innerHTML=`<b>`+name+`</b>`;
+        let letter = Math.trunc(Math.random()*(name.length));
+        document.getElementById('letter').innerText=name[letter];
+    </script>
+</body>
+</html>

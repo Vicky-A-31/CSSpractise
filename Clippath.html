@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip path for any Shape</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .parent{
+            filter: drop-shadow(-30px 20px 0 green);
+        }
+        .parent .shape{
+            width: 250px;
+            height: 250px;
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+            background-color: rgb(25, 228, 96);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="shape">
+        </div>
+    </div>
+</body>
+</html>
