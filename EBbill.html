@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EB bill Calculate</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+        :root{
+            --color1:#FFB07F;
+            --color2:#FFECAF;
+            --color3:#FF52A2;
+            --color4:#F31559;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body >h2{
+            margin-top: 20px;
+            text-align: center;
+            color:rgb(20, 20, 59);
+            letter-spacing: 3px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+        .container > .box{
+            min-width: 400px;
+            background-color:var(--color2);
+            border-radius: 10px;
+            min-height: 520px;
+            padding:30px 60px 0 60px;
+            box-shadow: 0 0 15px black;
+        }
+        .container .box input{
+            display: block;
+            width: 100%;
+            margin:0 0 20px 0;
+            min-height: 30px;
+            border-radius: 5px;
+            padding:1px 10px;
+            font-size: 20px;
+        }
+        .container .box button{
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+            min-height: 35px;
+            border-radius: 15px;
+            font-size: 20px;
+            background-color: var(--color4);
+            outline: none;
+            border: 1px solid black;
+            cursor: pointer;
+            color: wheat;
+        }
+        .container .box button:hover{
+            background-color: #11184e;
+        }
+        .box > #result{
+            margin-top: 10px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>EB bill Calculator</h2>
+    <div class="container">
+        <div class="box">
+            <input type="text" id="first" placeholder="jan,feb units">
+            <input type="text" id="second" placeholder="mar,april units">
+            <input type="text" id="third" placeholder="may,june units">
+            <input type="text" id="fourth" placeholder="july,aug units">
+            <input type="text" id="fifth" placeholder="sept,oct units">
+            <input type="text" id="sixth" placeholder="nov,dec units">
+            <button type="submit" id="amount" onclick="totalamount()">calculate</button>
+            <div id="result"></div>
+        </div>
+    </div>
+    
+    <script>
+        
+        function totalamount(){
+            const first = Number(document.getElementById('first').value);
+            const second = Number(document.getElementById('second').value);
+            const third = Number(document.getElementById('third').value);
+            const fourth = Number(document.getElementById('fourth').value);
+            const fifth = Number(document.getElementById('fifth').value);
+            const sixth = Number(document.getElementById('sixth').value);
+            const amount = document.getElementById('amount');
+            const profit = document.getElementById('profit');
+            const result = document.getElementById('result');
+
+            const arr = [first,second,third,fourth,fifth,sixth];
+            let newarray = [];
+            let add = 0;
+
+            for(let i=0; i<arr.length; i++)
+            {
+                add = arr[i]/2;
+                newarray.push(add);
+                newarray.push(add);
+            }
+
+            total = Calculate(arr);
+            one_month_total = Calculate(newarray);
+
+            let difference = total - one_month_total;
+            let profit_percentage = (difference/(total/100)).toPrecision(4);
+
+            result.innerHTML = "Two Month Amount : Rs."+total +"<br>One Month Amount : Rs."+one_month_total+"<br>Profit (in percentage) : "+profit_percentage+" %";
+            
+        }
+
+        function Calculate(arr)
+        {   
+            let total = 0;
+
+            for(let i=0; i<arr.length; i++)
+            {
+                if(arr[i]<100)
+                {
+                    total += 0;
+                }
+                else if(arr[i]>=100 && arr[i]<199)
+                {
+                    total += arr[i]*2;
+                }
+                else if(arr[i]>=200 && arr[i]<299)
+                {
+                    total += arr[i]*3;
+                }
+                else if(arr[i]>=300 && arr[i]<399)
+                {
+                    total += arr[i]*4;
+                }
+                else if(arr[i]>=400 && arr[i]<499)
+                {
+                    total += arr[i]*5;
+                }
+                else if(arr[i]>=500 && arr[i]<999)
+                {
+                    total += arr[i]*7;
+                }
+                else if(arr[i]>=1000)
+                {
+                    total += arr[i]*10;
+                }
+            }
+            return total;
+        }
+    </script>
+</body>
+</html>
