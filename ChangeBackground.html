@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Backgroud Color Randomly</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family:'Poppins',sans-serif;
+        }
+        body > h3{
+            text-align: center;
+            padding: 10px 0 10px 0;
+            background-color: red;
+            word-spacing: 5px;
+        }
+        #container{
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+        #container > button{
+            background-color: rgb(89, 0, 255);
+            min-width: 300px;
+            font-size: 20px;
+            color:white;
+            min-height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h3>Change Background Color Randomly</h3>
+    <div id="container">
+        <button id="btn" onclick="colorChange()">change background color</button>
+    </div>
+    <script>
+        function colorChange(){
+            const container = document.getElementById('container');
+            const btn = document.getElementById('btn');
+
+            let array = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']
+
+            let colorcode = "#"; 
+            let n = 0;
+            for(let i=0; i<=5; i++)
+            {
+                n = Math.trunc(Math.random()*array.length)
+                colorcode += array[n]
+            }
+            console.log(colorcode)
+            container.style.backgroundColor = colorcode;
+        }
+    </script>
+</body>
+</html>
