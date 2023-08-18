@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition and Animation</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .container div{
+            height: 100px;
+            display: block;
+            display: flex;
+            justify-content: center;
+        }
+
+        .innerbox{
+            background-color: blueviolet;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid black;
+            position: absolute;
+            top: 205px;
+            left: 635px;
+            z-index: -1;
+            animation-name: circle;
+            animation-duration: 1s;
+            animation-delay: 0.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+        }
+        @keyframes circle{
+            50%{
+                transform: scale(1.5);
+            }
+        }
+
+        .container .column1{
+            display: flex;
+            margin-top: 150px;
+        }
+        .container .column2{
+            display: flex;
+        }
+        .container .column1 .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: redbox;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        @keyframes redbox{
+            50%{
+                transform: translate3d(200px,200px,200px);
+            }
+        }
+
+        .container .column1 .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            animation-name: yellowbox;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        @keyframes yellowbox{
+            50%{
+                transform: translate3d(-200px,200px,200px);
+            }
+        }
+    
+        .container .column2 .box3{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            animation-name: bluebox;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        @keyframes bluebox{
+            50%{
+                transform: translate3d(200px,-200px,200px);
+            }
+        }
+
+        .container .column2 .box4{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            animation-name: greenbox;
+            animation-duration: 2s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+        }
+        @keyframes greenbox{
+            50%{
+                transform: translate3d(-200px,-200px,-200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="column1">
+            <div class="box1"></div>
+            <div class="box2"></div>
+        </div>
+        <div class="column2">
+            <div class="box3"></div>
+            <div class="box4"></div>
+        </div>
+    </div>
+    <div class="innerbox"></div>
+</body>
+</html>
