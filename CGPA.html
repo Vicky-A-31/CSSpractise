@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="shortcut icon" href="./anna-university-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CGPA.css">
+</head>
+<body>
+    <section class="container">
+        <div class="box">
+            <h2>CGPA CALCULATOR FOR ANNA UNIVERSITY STUDENTS</h2>
+            <h4>2017 REGULATION</h4>
+            <div class="content">
+                <div>
+                    <label for="dept">Department</label>
+                    <select name="dept" id="dept">
+                        <option value="select">---select---</option>
+                        <option value="cse">BE CSE</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sem">Semester</label>
+                    <select name="sem" id="sem" onchange="ShowInputs()">
+                        <option value="select">---select---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+                <!-- inputs field start -->
+                <div class="inputs">
+                    <input type="number" id="one" placeholder="1st semester gpa"> 
+                </div>
+                <div class="inputs">
+                    <input type="number" id="two" placeholder="2nd semester gpa">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="three" placeholder="3rd semester gpa">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="four" placeholder="4th semester gpa">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="five" placeholder="5th semester gpa">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="six" placeholder="6th semester gpa">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="seven" placeholder="7th semester gpa">
+                </div>
+                <div class="inputs">
+                    <input type="number" id="eight" placeholder="8th semester gpa">
+                </div>
+                <div class="inputs">
+                    <button onclick="CalculateCGPA()">Calculate</button>
+                </div>
+                <div class="inputs">
+                    <p id="result"></p>
+                </div>
+                <!-- inputs field end -->
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+
+       function ShowInputs(){
+            let semester = Number(document.getElementById('sem').value) 
+            let inputs = document.getElementsByClassName('inputs')
+            let len = inputs.length
+
+            for(let i=0; i<len; i++){
+                inputs[i].style.display = "none"
+            }
+
+            for(let i=0; i<semester; i++){
+                inputs[i].style.display = "block"
+                inputs[len-1].style.display = "block"
+                inputs[len-2].style.display = "block"
+            }
+       }
+
+       function CalculateCGPA(){
+            let input1 = Number(document.getElementById('one').value)
+            let input2 = Number(document.getElementById('two').value)
+            let input3 = Number(document.getElementById('three').value)
+            let input4 = Number(document.getElementById('four').value)
+            let input5 = Number(document.getElementById('five').value)
+            let input6 = Number(document.getElementById('six').value)
+            let input7 = Number(document.getElementById('seven').value)
+            let input8 = Number(document.getElementById('eight').value)
+            let result = document.getElementById('result')
+
+            let semester = Number(document.getElementById('sem').value) 
+
+            const semesters = [input1,input2,input3,input4,input5,input6,input7,input8]
+            
+            let total = 0
+            for(let add of semesters){
+                total += add
+            }
+
+            let output = (total/semester).toPrecision(4)
+            result.innerText = output 
+       }
+    </script>
+</body>
+</html>

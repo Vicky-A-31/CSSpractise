@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator for ANNA University Students</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./anna-university-logo.png" type="image/x-icon">
+</head>
+<body>
+
+    <section class="container">
+        <div class="box">
+            <h2>CGPA/GPA CALCULATOR FOR ANNA UNIVERSITY STUDENTS</h2>
+            <h4>2017 REGULATION</h4>
+            <form action="" id="form" method="get">
+                <div>
+                    <input type="radio" name="calculator" id="GPA">
+                    <label for="GPA">GPA calculator</label>
+                </div>
+                <div>
+                    <input type="radio" name="calculator" id="CGPA">
+                    <label for="CGPA">CGPA calculator</label>
+                </div>
+               <div>
+                    <button type="submit" onclick="ChangeLink()">Next</button>
+               </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function ChangeLink(){
+            const formlink = document.getElementById('form')
+            const gpa = document.getElementById('GPA')
+            const cgpa = document.getElementById('CGPA')
+
+            if(gpa.checked == true && cgpa.checked == false){
+                formlink.getAttribute('action')
+                formlink.setAttribute('action','./GPA.html')
+            }
+            else if(cgpa.checked == true && gpa.checked == false){
+                formlink.getAttribute('action')
+                formlink.setAttribute('action','./CGPA.html')
+            }
+        }
+        
+    </script>
+</body>
+</html>
