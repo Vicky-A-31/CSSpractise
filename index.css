@@ -1,0 +1,92 @@
+:root{
+    --color1:#F11A7B;
+    --color2:wheat;
+    --color3:#FFE5AD;
+    --color4:black;
+    --color5:#982176;
+    --color6:#3E001F;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+*{
+    padding:0px;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.container .box{
+    background-color: var(--color3);
+    height: 500px;
+    width: 600px;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 0 20px var(--color5);
+}
+
+.box h2{
+    text-align: center;
+    text-transform: uppercase;
+    word-spacing: 2px;
+    width: 100%;
+    font-size: 28px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: var(--color6);
+    line-height: 1.2em;
+}
+
+.box h4{
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.box > form{
+    width: 100%;
+    padding: 50px;
+}
+
+.box > form div{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.box form div label{
+    font-size: 20px;
+    color: var(--color4);
+    padding-left: 5px;
+}
+
+.box form div input[type=radio]{
+    border: 0px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color5);
+}
+
+.box form div button{
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: var(--color1);
+    color: var(--color2);
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border: 2px solid var(--color4);
+}
+
+@media (max-width:480px){
+    .container .box{
+        width: 420px;
+    }
+}

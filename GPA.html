@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="shortcut icon" href="./anna-university-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./GPA.css">
+    <script src="./GPA.js"></script>
+</head>
+<body>
+    <section class="container">
+        <div class="box">
+            <h2>GPA CALCULATOR FOR ANNA UNIVERSITY STUDENTS</h2>
+            <h4>2017 REGULATION</h4>
+            <div class="content">
+                <div>
+                    <label for="dept">Department</label>
+                    <select name="dept" id="dept" onchange="ShowSemester()">
+                        <option value="select">---select---</option>
+                        <option value="becse">BE CSE</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sem">Semester</label>
+                    <select name="sem" id="sem" onchange="ShowSemester()">
+                        <option value="select">---select---</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+            <!-- 1st Semester subjects list start-->
+            <section id="1stsem2017">
+                <div>
+                    <label>Communicative English</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Engineering Mathematics I</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Engineering Physics</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Engineering Chemistry</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Problem Solving and Python Programming</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Engineering Graphics</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Problem Solving and Python Programming Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Physics and Chemistry Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 1st Semester subjects list end-->
+
+             <!-- 2nd Semester subjects list start-->
+             <section id="2ndsem2017">
+                <div>
+                    <label>Technical English</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Engineering Mathematics II</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Physics for Information Science</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Basic Electrical, Electronics and Measurement Engineering</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Environmental Science and Engineering</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Programming in C</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Engineering Practices Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>C Programming Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 2nd Semester subjects list end-->
+
+             <!-- 3rd Semester subjects list start-->
+             <section id="3rdsem2017">
+                <div>
+                    <label>Discrete Mathematics</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Digital Principles and System Design</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Data Structures</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Object Oriented Programming</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div >
+                    <label>Communication Engineering</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Data Structures Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Object Oriented Programming Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Digital Systems Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Interpersonal Skills/Listening & Speaking</label><br>
+                    <div>
+                        <input type="radio" name="grade9" value="10"><label>O</label>
+                        <input type="radio" name="grade9" value="9"><label>A+</label>
+                        <input type="radio" name="grade9" value="8"><label>A</label>
+                        <input type="radio" name="grade9" value="7"><label>B+</label>
+                        <input type="radio" name="grade9" value="6"><label>B</label>
+                        <input type="radio" name="grade9" value="0"><label>U</label>
+                    </div> 
+                </div>
+            </section>
+            <!-- 3rd Semester subjects list end-->
+
+            <!-- 4th Semester subjects list start-->
+            <section id="4thsem2017">
+                <div>
+                    <label>Probability and Queuing Theory</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Computer Architecture</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Database Management Systems</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Design and Analysis of Algorithms</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Operating Systems</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Software Engineering</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div>
+                </div>           
+                <div>
+                    <label>Database Management Systems Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Operating Systems Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Advanced Reading and Writing</label><br>
+                    <div>
+                        <input type="radio" name="grade9" value="10"><label>O</label>
+                        <input type="radio" name="grade9" value="9"><label>A+</label>
+                        <input type="radio" name="grade9" value="8"><label>A</label>
+                        <input type="radio" name="grade9" value="7"><label>B+</label>
+                        <input type="radio" name="grade9" value="6"><label>B</label>
+                        <input type="radio" name="grade9" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 4th Semester subjects list end-->
+            
+            <!-- 5th Semester subjects list start-->
+            <section id="5thsem2017">
+                <div>
+                    <label>Algebra and Number Theory</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Computer Networks</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Microprocessors and Microcontrollers</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Theory of Computation</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Object Oriented Analysis and Design</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Open Elective I</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Microprocessors and Microcontrollers Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div>
+                </div>           
+                <div>
+                    <label>Object Oriented Analysis and Design Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Networks Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade9" value="10"><label>O</label>
+                        <input type="radio" name="grade9" value="9"><label>A+</label>
+                        <input type="radio" name="grade9" value="8"><label>A</label>
+                        <input type="radio" name="grade9" value="7"><label>B+</label>
+                        <input type="radio" name="grade9" value="6"><label>B</label>
+                        <input type="radio" name="grade9" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 5th Semester subjects list end-->
+
+            <!-- 6th Semester subjects list start-->
+            <section id="6thsem2017">
+                <div>
+                    <label>Internet Programming</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Artificial Intelligence</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Mobile Computing</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Compiler Design</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Distributed Systems</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Professional Elective I</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div>
+                </div>           
+                <div>
+                    <label>Internet Programming Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Mobile Application Development Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Mini Project</label><br>
+                    <div>
+                        <input type="radio" name="grade9" value="10"><label>O</label>
+                        <input type="radio" name="grade9" value="9"><label>A+</label>
+                        <input type="radio" name="grade9" value="8"><label>A</label>
+                        <input type="radio" name="grade9" value="7"><label>B+</label>
+                        <input type="radio" name="grade9" value="6"><label>B</label>
+                        <input type="radio" name="grade9" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Professional Communication</label><br>
+                    <div>
+                        <input type="radio" name="grade" value="10"><label>O</label>
+                        <input type="radio" name="grade" value="9"><label>A+</label>
+                        <input type="radio" name="grade" value="8"><label>A</label>
+                        <input type="radio" name="grade" value="7"><label>B+</label>
+                        <input type="radio" name="grade" value="6"><label>B</label>
+                        <input type="radio" name="grade" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 6th Semester subjects list end-->
+
+            <!-- 7th Semester subjects list start-->
+            <section id="7thsem2017">
+                <div>
+                    <label>Principles of Management</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div> 
+                </div>
+                <div>
+                    <label>Crytography and Network Security</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Cloud Computing</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Open Elective II</label><br>
+                    <div>
+                        <input type="radio" name="grade4" value="10"><label>O</label>
+                        <input type="radio" name="grade4" value="9"><label>A+</label>
+                        <input type="radio" name="grade4" value="8"><label>A</label>
+                        <input type="radio" name="grade4" value="7"><label>B+</label>
+                        <input type="radio" name="grade4" value="6"><label>B</label>
+                        <input type="radio" name="grade4" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Professional Elective II</label><br>
+                    <div>
+                        <input type="radio" name="grade5" value="10"><label>O</label>
+                        <input type="radio" name="grade5" value="9"><label>A+</label>
+                        <input type="radio" name="grade5" value="8"><label>A</label>
+                        <input type="radio" name="grade5" value="7"><label>B+</label>
+                        <input type="radio" name="grade5" value="6"><label>B</label>
+                        <input type="radio" name="grade5" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Professional Elective III</label><br>
+                    <div>
+                        <input type="radio" name="grade6" value="10"><label>O</label>
+                        <input type="radio" name="grade6" value="9"><label>A+</label>
+                        <input type="radio" name="grade6" value="8"><label>A</label>
+                        <input type="radio" name="grade6" value="7"><label>B+</label>
+                        <input type="radio" name="grade6" value="6"><label>B</label>
+                        <input type="radio" name="grade6" value="0"><label>U</label>
+                    </div>
+                </div>           
+                <div>
+                    <label>Cloud Computing Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade7" value="10"><label>O</label>
+                        <input type="radio" name="grade7" value="9"><label>A+</label>
+                        <input type="radio" name="grade7" value="8"><label>A</label>
+                        <input type="radio" name="grade7" value="7"><label>B+</label>
+                        <input type="radio" name="grade7" value="6"><label>B</label>
+                        <input type="radio" name="grade7" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Security Lab</label><br>
+                    <div>
+                        <input type="radio" name="grade8" value="10"><label>O</label>
+                        <input type="radio" name="grade8" value="9"><label>A+</label>
+                        <input type="radio" name="grade8" value="8"><label>A</label>
+                        <input type="radio" name="grade8" value="7"><label>B+</label>
+                        <input type="radio" name="grade8" value="6"><label>B</label>
+                        <input type="radio" name="grade8" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 7th Semester subjects list end-->
+
+            <!-- 8th Semester subjects list start-->
+            <section id="8thsem2017">
+                <div>
+                    <label>Professional Elective IV</label><br>
+                    <div>
+                        <input type="radio" name="grade1" value="10"><label>O</label>
+                        <input type="radio" name="grade1" value="9"><label>A+</label>
+                        <input type="radio" name="grade1" value="8"><label>A</label>
+                        <input type="radio" name="grade1" value="7"><label>B+</label>
+                        <input type="radio" name="grade1" value="6"><label>B</label>
+                        <input type="radio" name="grade1" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Professional Elective V</label><br>
+                    <div>
+                        <input type="radio" name="grade2" value="10"><label>O</label>
+                        <input type="radio" name="grade2" value="9"><label>A+</label>
+                        <input type="radio" name="grade2" value="8"><label>A</label>
+                        <input type="radio" name="grade2" value="7"><label>B+</label>
+                        <input type="radio" name="grade2" value="6"><label>B</label>
+                        <input type="radio" name="grade2" value="0"><label>U</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Project Work</label><br>
+                    <div>
+                        <input type="radio" name="grade3" value="10"><label>O</label>
+                        <input type="radio" name="grade3" value="9"><label>A+</label>
+                        <input type="radio" name="grade3" value="8"><label>A</label>
+                        <input type="radio" name="grade3" value="7"><label>B+</label>
+                        <input type="radio" name="grade3" value="6"><label>B</label>
+                        <input type="radio" name="grade3" value="0"><label>U</label>
+                    </div>
+                </div>
+            </section>
+            <!-- 8th Semester subjects list end-->
+
+            <div class="inputs">
+                <button onclick="CalculateGPA()">Calculate</button>
+            </div>
+            <div class="inputs">
+                <p id="result"></p>
+            </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
